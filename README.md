@@ -1,4 +1,4 @@
-App che fa richieste API con Axios in React
+# App che fa richieste API con Axios in React
 Questo progetto è un'applicazione React che utilizza Axios per fare richieste API e visualizzare i dati ricevuti. L'app utilizza la API pubblica di GitHub per recuperare le informazioni sugli utenti.
 
 Come funziona l'app
