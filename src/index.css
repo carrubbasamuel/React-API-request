@@ -17,38 +17,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-
-body>div{
-  position: absolute;
-  top: 50px;
-  left: 250px;
-  width: 1000px;
-  height: 500px;
-  overflow: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  border: 1px solid black;
-}
-
-form{
-  width: 500px;
-  padding: 10px;
-  
-}
-
-table{
-  width: 500px!important;
-}
-
-
-body>div>div{
-  width: 1px;
-  border: 1px solid black;
-  z-index: 2;
-  height: 100%;
-}
-

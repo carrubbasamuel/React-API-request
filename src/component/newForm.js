@@ -1,42 +1,39 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import BasicExample from './newTable';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function FormComponent() {
-  const [data, setData] = useState([]);//Hook React per gestire lo stato dei dati
 
-  const handleName = (event) => {
-    event.preventDefault();
-    let firstNameValue = document.getElementById("firstName").value;
-    let lastNameValue = document.getElementById("lastName").value;
-    let userNameValue = document.getElementById("userName").value;
-    setData([...data, { firstName: firstNameValue, lastName: lastNameValue, userName: userNameValue }]);
-  }
-  
+
+
+//Richieste API alla lista di cose da fare "Todos"
+
+
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetch =  async () => {
+      const result = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos"
+      );
+      console.log(result)
+      setData(result.data);
+    };
+    fetch(); 
+  }, []);
+
   return (
-    <React.Fragment>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control id="firstName" type="text" placeholder="Enter name" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control id="lastName" type="text" placeholder="Enter Last Name" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Username</Form.Label>
-          <Form.Control id="userName" type="text" placeholder="Enter User Name" />
-        </Form.Group>
-        <Button variant="success" onClick={handleName}>
-          Add
-        </Button>
-      </Form>
-      <BasicExample data={data} />
-    </React.Fragment>
+    <div className="container">
+      <h1>Lista di cose da fare</h1>
+      <ul className="list-group">
+        {data.map((item) => (
+          <li key={item.id} className="list-group-item">
+            {item.title}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
-export default FormComponent;
+export default App;
