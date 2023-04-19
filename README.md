@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+App che fa richieste API con Axios in React
+Questo progetto è un'applicazione React che utilizza Axios per fare richieste API e visualizzare i dati ricevuti. L'app utilizza la API pubblica di GitHub per recuperare le informazioni sugli utenti.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Come funziona l'app
+L'app consiste in una singola pagina che permette all'utente di inserire un nome utente di GitHub. Quando l'utente preme il pulsante "Cerca", l'app fa una richiesta alla API di GitHub per recuperare le informazioni sull'utente corrispondente. Se la richiesta ha successo, l'app visualizza le informazioni sull'utente, inclusi il nome, la descrizione, il numero di repository pubblici e il numero di seguaci.
 
-## Available Scripts
+Per fare le richieste API, l'app utilizza Axios, una libreria JavaScript che semplifica l'interazione con le API HTTP. Axios fornisce una sintassi semplice per effettuare richieste GET e POST e gestisce automaticamente la serializzazione dei dati di richiesta e la deserializzazione dei dati di risposta.
 
-In the project directory, you can run:
+Come usare l'app
+Per utilizzare l'app, è sufficiente clonare il repository e installare le dipendenze:
 
-### `npm start`
+bash
+Copy code
+git clone https://github.com/tuonome/app-axios-react.git
+cd app-axios-react
+npm install
+Una volta installate le dipendenze, è possibile avviare l'app con il comando:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+sql
+Copy code
+npm start
+L'app sarà disponibile all'indirizzo http://localhost:3000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cosa c'è nel codice
+Il codice dell'app è scritto in React e utilizza la libreria Axios per effettuare le richieste API. La logica principale dell'app è contenuta nel componente UserSearch, che permette all'utente di inserire un nome utente e di effettuare la ricerca. Quando l'utente preme il pulsante "Cerca", il componente fa una richiesta alla API di GitHub utilizzando Axios e visualizza i dati ricevuti.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Il codice utilizza anche il componente Loading, che visualizza un indicatore di caricamento mentre la richiesta è in corso, e il componente Error, che visualizza un messaggio di errore se la richiesta non ha successo.
